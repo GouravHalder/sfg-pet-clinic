@@ -41,8 +41,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<scm> 
-		<developerConnection>scm:git:https://github.com/GouravHalder/sfg-pet-clinic.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+	
 </project>
