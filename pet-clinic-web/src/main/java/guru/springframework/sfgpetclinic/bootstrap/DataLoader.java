@@ -7,22 +7,22 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.VetService;
-import guru.springframework.sfgpetclinic.services.map.OwnerMapService;
-import guru.springframework.sfgpetclinic.services.map.VetMapService;
 
 @Component
 public class DataLoader implements CommandLineRunner{
 
 	
-	public OwnerService ownerService;
-	public VetService vetService;
-	public DataLoader() {
+	private final OwnerService ownerService;
+	private final VetService vetService;
+	/*
+	 * public DataLoader() { super(); ownerService = new OwnerMapService();
+	 * vetService = new VetMapService(); // TODO Auto-generated constructor stub }
+	 */
+	public DataLoader(OwnerService ownerService, VetService vetService) {
 		super();
-		ownerService = new OwnerMapService();
-		vetService = new VetMapService();
-		// TODO Auto-generated constructor stub
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
-
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
@@ -55,6 +55,8 @@ public class DataLoader implements CommandLineRunner{
 		System.out.println("Loading Vets......");
 		
 	}
+
+	
 
 	
 }
