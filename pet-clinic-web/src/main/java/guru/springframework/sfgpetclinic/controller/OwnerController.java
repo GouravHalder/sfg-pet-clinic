@@ -11,17 +11,21 @@ import guru.springframework.sfgpetclinic.services.OwnerService;
 public class OwnerController {
 
 	private final OwnerService ownerService;
+
 	public OwnerController(OwnerService ownerService) {
 		super();
 		this.ownerService = ownerService;
 	}
-	@RequestMapping({"","/","/index","index.html"})
-	public String listOwners(Model model)
-	{
-		model.addAttribute("owners",ownerService.findAll());
+
+	@RequestMapping({ "", "/", "/index", "index.html" })
+	public String listOwners(Model model) {
+		model.addAttribute("owners", ownerService.findAll());
 		return "owners/index";
 	}
-	/*
-	 * @RequestMapping({"/error"}) public String index1() { return "abc"; }
-	 */
+
+	@RequestMapping({ "/find" })
+	public String findOwners() {
+		return "notImplemented";
+	}
+
 }
