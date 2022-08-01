@@ -31,7 +31,12 @@ public class VisitMapService extends AbstractMapService<Visit, Long>  implements
 		{
 			throw new RuntimeException("Invalid Visit");
 		}
-		return super.save(visit);
+		else
+		{
+			System.out.println("I am Here");
+			return super.save(visit);
+		}
+		
 	}
 
 	@Override
